@@ -124,7 +124,7 @@ endl
     jmp .do_things
 @@:
     cmp esi, INTERFACEKEY_STRING_A090
-    jne .lat_lower_loop
+    jne .lat_upper_loop
     
 .check_space:
     test [flag], STRINGENTRY_SPACE
