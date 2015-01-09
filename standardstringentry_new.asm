@@ -56,6 +56,7 @@ locals
 endl
     mov ebx, ecx ; events
     
+    ; if(flag & STRINGENTRY_LETTERS)
     test [flag], STRINGENTRY_LETTERS
     .if ~ZERO?
         mov [count_arg], INTERFACEKEY_STRING_A168 ; '¨'
@@ -129,6 +130,7 @@ endl
         @@:
     .endif
     
+    ; if(flag & STRINGENTRY_SPACE)
     test [flag], STRINGENTRY_SPACE
     .if ~ZERO?
         mov [count_arg], INTERFACEKEY_STRING_A032
@@ -140,6 +142,7 @@ endl
         .endif
     .endif
     
+    ; if(events.count(INTERFACEKEY_STRING_A000)) entry='\x0';
     mov [count_arg], INTERFACEKEY_STRING_A000
     lea eax, [count_arg]
     call_count ebx, eax
@@ -148,6 +151,7 @@ endl
         jmp .do_things
     .endif
     
+    ; if(flag & STRINGENTRY_NUMBERS)
     test [flag], STRINGENTRY_NUMBERS
     .if ~ZERO?
         mov edi, '0'
@@ -168,6 +172,7 @@ endl
         @@:
     .endif
     
+    ; if(flag & STRINGENTRY_SYMBOLS)
     test [flag], STRINGENTRY_SYMBOLS
     .if ~ZERO?
         mov edi, 0
@@ -189,76 +194,76 @@ endl
     .endif
     
 .do_things:
-    cmp [entry], -1
-    je .return_0
-    
-    mov eax, [str]
-    mov ecx, [eax+string.len] ; ecx = str.length()
-    
-    ; if(entry=='\x0')
-    ;     if(str.length()>0) str.resize(str.length()-1);
-    .if [entry]=0
-        .if ecx>0
-            dec ecx
-            call resize
-        .endif
-        jmp .return_1
-    .endif
-    
-    ; if(cursor>=maxlen) cursor=maxlen-1;
-    .if ecx>=[maxlen]
-        mov ecx, [maxlen]
-        dec ecx
-    .endif
-    
-    ; if(cursor<0) cursor=0;
-    .if ecx<0
-        xor ecx, ecx
-    .endif
-    
-    ; if(str.length()<cursor+1) str.resize(cursor+1);
-    mov edx, [eax+string.len]
-    dec edx
-    .if edx < ecx
-        push ecx
-        push eax
-        inc ecx
-        call resize
-        pop eax
-        pop ecx
-    .endif
-    
-    ; if(flag & STRINGENTRY_CAPS)
-    test [flag], STRINGENTRY_CAPS
-    .if ~ZERO?
-        ; if(entry>='a'&&entry<='z') entry+='A'-'a';
-        .if [entry]>='a' & [entry]<='z'
-            add [entry], 'A'-'a'
+    .if [entry] <> -1
+        mov eax, [str]
+        mov ecx, [eax+string.len] ; ecx = str.length()
+        
+        ; if(entry=='\x0')
+        ;     if(str.length()>0) str.resize(str.length()-1);
+        .if [entry]=0
+            .if ecx>0
+                dec ecx
+                call resize
+            .endif
+        .else
+            ; if(cursor>=maxlen) cursor=maxlen-1;
+            .if ecx>=[maxlen]
+                mov ecx, [maxlen]
+                dec ecx
+            .endif
+            
+            ; if(cursor<0) cursor=0;
+            .if ecx<0
+                xor ecx, ecx
+            .endif
+            
+            ; if(str.length()<cursor+1) str.resize(cursor+1);
+            mov edx, [eax+string.len]
+            dec edx
+            .if edx < ecx
+                push ecx
+                push eax
+                inc ecx
+                call resize
+                pop eax
+                pop ecx
+            .endif
+            
+            ; if(flag & STRINGENTRY_CAPS)
+            test [flag], STRINGENTRY_CAPS
+            .if ~ZERO?
+                ; if(entry>='a'&&entry<='z') entry+='A'-'a';
+                .if [entry]>='a' & [entry]<='z'
+                    add [entry], 'A'-'a'
+                .endif
+                
+                ; if(entry>='à'&&entry<='ÿ') entry+='A'-'a';
+                .if [entry]>='à' & [entry]<='ÿ'
+                    add [entry], 'À'-'à' ; Cyrillic A and a
+                .endif
+                
+                ; if(entry=='¸') entry+='¨'-'¸';
+                .if [entry]='¸'
+                    add [entry], '¨'-'¸' ; Cyrillic Yo and yo
+                .endif
+            .endif
+            
+            ; str[cursor]=entry;
+            mov edx, [eax+string.capa]
+            .if edx>=10h
+                mov eax, [eax+string.ptr]
+            .endif
+            mov edx, [entry]
+            mov [eax+ecx], dl
         .endif
         
-        ; if(entry>='à'&&entry<='ÿ') entry+='A'-'a';
-        .if [entry]>='à' & [entry]<='ÿ'
-            add [entry], 'À'-'à' ; Cyrillic A and a
-        .endif
-        
-        ; if(entry=='¸') entry+='¨'-'¸';
-        .if [entry]='¸'
-            add [entry], '¨'-'¸' ; Cyrillic Yo and yo
-        .endif
+        ; return 1
+        xor eax, eax
+        inc eax
+        jmp .ret
     .endif
     
-    ; str[cursor]=entry;
-    mov edx, [eax+string.capa]
-    .if edx>=10h
-        mov eax, [eax+string.ptr]
-    .endif
-    mov edx, [entry]
-    mov [eax+ecx], dl
-.return_1:
-    xor eax, eax
-    inc eax
-    jmp .ret
-.return_0:
+    ; return 0
     xor eax, eax
 .ret:
     ret
