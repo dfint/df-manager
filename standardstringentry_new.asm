@@ -45,19 +45,6 @@ ends
 use32
 org 86CD20h
 
-; =============== S U B R O U T I N E =======================================
-
-; char __thiscall standardstringentry(void *events, stl_string *str, int maxlen, char flag)
-; standardstringentry proc near
-
-var_C  = -0Ch
-var_8  = -8
-var_4  = -4
-_str   = +4
-maxlen = +8
-flag   = +0Ch
-; events = ecx
-
 a = standardstringentry ; force compilation of the procedure
 
 proc standardstringentry stdcall uses esi edi ebx, \
