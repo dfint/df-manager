@@ -29,6 +29,7 @@ flag   = +0Ch
     push edi
     mov esi, ecx
     jz loc_86D9D1
+    
     lea eax, [esp+20h+var_8]
     push eax
     push esi
@@ -6931,7 +6932,7 @@ loc_870972:    ; CODE XREF: standardstringentry+FB0j
     test bl, bl
     jnz short loc_87099A
 
-    mov eax, [esp+20h+_str] ; a1
+    mov eax, [esp+20h+_str]
     mov ecx, [eax+10h]
 
     cmp ecx, ebp
@@ -6951,7 +6952,7 @@ loc_870972:    ; CODE XREF: standardstringentry+FB0j
 
 loc_87099A:    ; CODE XREF: standardstringentry+3C5Dj
     mov edi, [esp+20h+_str]
-    mov eax, [edi+10h]
+    mov eax, [edi+10h] ; len
     mov ecx, [esp+20h+maxlen]
     mov esi, eax
     cmp esi, ecx
