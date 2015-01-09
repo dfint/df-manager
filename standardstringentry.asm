@@ -1,5 +1,7 @@
 use32
 
+import ''
+
 _Eqrange = 6613D0h
 _Distance2 = 596900h
 count = 595E10h
@@ -36,7 +38,6 @@ flag   = +0Ch
     mov dword [esp+28h+var_C], 51Fh
     call _Eqrange
     
-; 18:   v10 = 0;
     mov ecx, [esp+20h+flag]
     mov edx, [esp+20h+var_4]
     mov eax, [esp+20h+var_8]
@@ -53,11 +54,11 @@ flag   = +0Ch
     mov bl, 61h
 
 loc_86CD77:    ; CODE XREF: standardstringentry+53j
+    mov dword [esp+28h+var_C], 520h
     lea ecx, [esp+20h+var_8]
     push ecx
     push esi
     lea eax, [esp+28h+var_C]
-    mov dword [esp+28h+var_C], 520h
     call _Eqrange
     
 ; 24:   v10 = 0;
@@ -69,24 +70,20 @@ loc_86CD77:    ; CODE XREF: standardstringentry+53j
     push ecx
     lea edi, [esp+2Ch+var_C]
     mov [esp+2Ch+var_C], ebp
-; 25:   _Distance2((int)&v10, v11, v12);
     call _Distance2
     
 ; 26:   if ( v10 )
     add esp, 0Ch
     cmp [esp+20h+var_C], ebp
     jz short loc_86CDB5
-; 27:     entry = 98;
     mov bl, 62h
-; 28:   v10 = 1313;
 
 loc_86CDB5:    ; CODE XREF: standardstringentry+91j
+    mov dword [esp+28h+var_C], 521h
     lea edx, [esp+20h+var_8]
     push edx
     push esi
     lea eax, [esp+28h+var_C]
-    mov dword [esp+28h+var_C], 521h
-; 29:   _Eqrange((int)&v10, v5, (int)&v11);
     call _Eqrange
     
 ; 30:   v10 = 0;
