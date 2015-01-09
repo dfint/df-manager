@@ -262,7 +262,7 @@ endl
     mov eax, [eax+string.ptr]
 @@:
     mov edx, [entry]
-    mov [eax+ecx], edx
+    mov [eax+ecx], dl
 .return_1:
     xor eax, eax
     inc eax
