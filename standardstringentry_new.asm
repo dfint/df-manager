@@ -47,7 +47,7 @@ org 86CD20h
 
 a = standardstringentry ; force compilation of the procedure
 
-proc standardstringentry stdcall uses esi edi ebx, \
+proc standardstringentry c uses esi edi ebx, \
     str:DWORD, maxlen:DWORD, flag:BYTE ; events:ECX
 locals
     entry dd -1
