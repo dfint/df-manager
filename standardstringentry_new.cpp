@@ -7,7 +7,7 @@ char standardstringentry(string &str,int maxlen,unsigned int flag,std::set<Inter
     {
         if(events.count(INTERFACEKEY_STRING_A168))entry=168;//Ё
         if(events.count(INTERFACEKEY_STRING_A184))entry=184;//ё
-        cont=192;
+        cont='А'; // cyrillic A
         for(item = INTERFACEKEY_STRING_A192; item <= INTERFACEKEY_STRING_A255; item++)//все русские буквы
         {
             if(events.count(item)) entry = cont;
@@ -59,13 +59,15 @@ char standardstringentry(string &str,int maxlen,unsigned int flag,std::set<Inter
             int cursor=str.length();
             if(cursor>=maxlen) cursor=maxlen-1;
             if(cursor<0) cursor=0;
-
             if(str.length()<cursor+1) str.resize(cursor+1);
-
-            if(entry>='a'&&entry<='z'&&(flag & STRINGENTRY_CAPS)) str[cursor]=entry+'A'-'a';
-            if(entry>=224&&entry<=255&&(flag & STRINGENTRY_CAPS)) str[cursor]=entry+'A'-'a';
-            if(entry==184&&(flag & STRINGENTRY_CAPS)) str[cursor]=entry-10;
-            else str[cursor]=entry;
+            
+            if(flag & STRINGENTRY_CAPS)
+            {
+                if(entry>='a'&&entry<='z') entry+='A'-'a';
+                if(entry>='а'&&entry<='я') entry+='A'-'a';
+                if(entry=='ё') entry+='Ё'-'ё';
+            }
+            str[cursor]=entry;
         }
         return 1;
     }
