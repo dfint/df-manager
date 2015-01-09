@@ -1,7 +1,5 @@
 use32
 
-import ''
-
 _Eqrange = 6613D0h
 _Distance2 = 596900h
 count = 595E10h
@@ -5347,7 +5345,7 @@ loc_86FD0C:    ; CODE XREF: standardstringentry+2FE8j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 543h
-; 1208:     if ( sub_595E10(&v10) )
+; 1208:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FD26
@@ -5360,7 +5358,7 @@ loc_86FD26:    ; CODE XREF: standardstringentry+3002j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 544h
-; 1211:     if ( sub_595E10(&v10) )
+; 1211:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FD40
@@ -5373,7 +5371,7 @@ loc_86FD40:    ; CODE XREF: standardstringentry+301Cj
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 545h
-; 1214:     if ( sub_595E10(&v10) )
+; 1214:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FD5A
@@ -5386,7 +5384,7 @@ loc_86FD5A:    ; CODE XREF: standardstringentry+3036j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 546h
-; 1217:     if ( sub_595E10(&v10) )
+; 1217:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FD74
@@ -5399,7 +5397,7 @@ loc_86FD74:    ; CODE XREF: standardstringentry+3050j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 547h
-; 1220:     if ( sub_595E10(&v10) )
+; 1220:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FD8E
@@ -5412,7 +5410,7 @@ loc_86FD8E:    ; CODE XREF: standardstringentry+306Aj
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 548h
-; 1223:     if ( sub_595E10(&v10) )
+; 1223:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FDA8
@@ -5425,7 +5423,7 @@ loc_86FDA8:    ; CODE XREF: standardstringentry+3084j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 549h
-; 1226:     if ( sub_595E10(&v10) )
+; 1226:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FDC2
@@ -5438,7 +5436,7 @@ loc_86FDC2:    ; CODE XREF: standardstringentry+309Ej
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 54Ah
-; 1229:     if ( sub_595E10(&v10) )
+; 1229:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FDDC
@@ -5451,7 +5449,7 @@ loc_86FDDC:    ; CODE XREF: standardstringentry+30B8j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 54Bh
-; 1232:     if ( sub_595E10(&v10) )
+; 1232:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FDF6
@@ -5464,7 +5462,7 @@ loc_86FDF6:    ; CODE XREF: standardstringentry+30D2j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 54Ch
-; 1235:     if ( sub_595E10(&v10) )
+; 1235:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FE10
@@ -5477,7 +5475,7 @@ loc_86FE10:    ; CODE XREF: standardstringentry+30ECj
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 54Dh
-; 1238:     if ( sub_595E10(&v10) )
+; 1238:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FE2A
@@ -5490,7 +5488,7 @@ loc_86FE2A:    ; CODE XREF: standardstringentry+3106j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 54Eh
-; 1241:     if ( sub_595E10(&v10) )
+; 1241:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FE44
@@ -5503,7 +5501,7 @@ loc_86FE44:    ; CODE XREF: standardstringentry+3120j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 54Fh
-; 1244:     if ( sub_595E10(&v10) )
+; 1244:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FE5E
@@ -5516,7 +5514,7 @@ loc_86FE5E:    ; CODE XREF: standardstringentry+313Aj
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 550h
-; 1247:     if ( sub_595E10(&v10) )
+; 1247:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FE78
@@ -5529,7 +5527,7 @@ loc_86FE78:    ; CODE XREF: standardstringentry+3154j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 551h
-; 1250:     if ( sub_595E10(&v10) )
+; 1250:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FE92
@@ -5542,7 +5540,7 @@ loc_86FE92:    ; CODE XREF: standardstringentry+316Ej
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 552h
-; 1253:     if ( sub_595E10(&v10) )
+; 1253:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FEAC
@@ -5555,7 +5553,7 @@ loc_86FEAC:    ; CODE XREF: standardstringentry+3188j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 553h
-; 1256:     if ( sub_595E10(&v10) )
+; 1256:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FEC6
@@ -5568,7 +5566,7 @@ loc_86FEC6:    ; CODE XREF: standardstringentry+31A2j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 554h
-; 1259:     if ( sub_595E10(&v10) )
+; 1259:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FEE0
@@ -5581,7 +5579,7 @@ loc_86FEE0:    ; CODE XREF: standardstringentry+31BCj
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 555h
-; 1262:     if ( sub_595E10(&v10) )
+; 1262:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FEFA
@@ -5594,7 +5592,7 @@ loc_86FEFA:    ; CODE XREF: standardstringentry+31D6j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 556h
-; 1265:     if ( sub_595E10(&v10) )
+; 1265:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FF14
@@ -5607,7 +5605,7 @@ loc_86FF14:    ; CODE XREF: standardstringentry+31F0j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 557h
-; 1268:     if ( sub_595E10(&v10) )
+; 1268:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FF2E
@@ -5620,7 +5618,7 @@ loc_86FF2E:    ; CODE XREF: standardstringentry+320Aj
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 558h
-; 1271:     if ( sub_595E10(&v10) )
+; 1271:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FF48
@@ -5633,7 +5631,7 @@ loc_86FF48:    ; CODE XREF: standardstringentry+3224j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 559h
-; 1274:     if ( sub_595E10(&v10) )
+; 1274:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FF62
@@ -5646,7 +5644,7 @@ loc_86FF62:    ; CODE XREF: standardstringentry+323Ej
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 55Ah
-; 1277:     if ( sub_595E10(&v10) )
+; 1277:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FF7C
@@ -5659,7 +5657,7 @@ loc_86FF7C:    ; CODE XREF: standardstringentry+3258j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 55Bh
-; 1280:     if ( sub_595E10(&v10) )
+; 1280:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FF96
@@ -5672,7 +5670,7 @@ loc_86FF96:    ; CODE XREF: standardstringentry+3272j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 55Ch
-; 1283:     if ( sub_595E10(&v10) )
+; 1283:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FFB0
@@ -5685,7 +5683,7 @@ loc_86FFB0:    ; CODE XREF: standardstringentry+328Cj
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 55Dh
-; 1286:     if ( sub_595E10(&v10) )
+; 1286:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FFCA
@@ -5698,7 +5696,7 @@ loc_86FFCA:    ; CODE XREF: standardstringentry+32A6j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 55Eh
-; 1289:     if ( sub_595E10(&v10) )
+; 1289:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FFE4
@@ -5711,7 +5709,7 @@ loc_86FFE4:    ; CODE XREF: standardstringentry+32C0j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 55Fh
-; 1292:     if ( sub_595E10(&v10) )
+; 1292:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_86FFFE
@@ -5724,7 +5722,7 @@ loc_86FFFE:    ; CODE XREF: standardstringentry+32DAj
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 560h
-; 1295:     if ( sub_595E10(&v10) )
+; 1295:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870018
@@ -5737,7 +5735,7 @@ loc_870018:    ; CODE XREF: standardstringentry+32F4j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 561h
-; 1298:     if ( sub_595E10(&v10) )
+; 1298:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870032
@@ -5750,7 +5748,7 @@ loc_870032:    ; CODE XREF: standardstringentry+330Ej
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 562h
-; 1301:     if ( sub_595E10(&v10) )
+; 1301:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87004C
@@ -5763,7 +5761,7 @@ loc_87004C:    ; CODE XREF: standardstringentry+3328j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 563h
-; 1304:     if ( sub_595E10(&v10) )
+; 1304:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870066
@@ -5776,7 +5774,7 @@ loc_870066:    ; CODE XREF: standardstringentry+3342j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 564h
-; 1307:     if ( sub_595E10(&v10) )
+; 1307:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870080
@@ -5789,7 +5787,7 @@ loc_870080:    ; CODE XREF: standardstringentry+335Cj
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 565h
-; 1310:     if ( sub_595E10(&v10) )
+; 1310:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87009A
@@ -5802,7 +5800,7 @@ loc_87009A:    ; CODE XREF: standardstringentry+3376j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 566h
-; 1313:     if ( sub_595E10(&v10) )
+; 1313:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8700B4
@@ -5815,7 +5813,7 @@ loc_8700B4:    ; CODE XREF: standardstringentry+3390j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 567h
-; 1316:     if ( sub_595E10(&v10) )
+; 1316:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8700CE
@@ -5828,7 +5826,7 @@ loc_8700CE:    ; CODE XREF: standardstringentry+33AAj
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 568h
-; 1319:     if ( sub_595E10(&v10) )
+; 1319:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8700E8
@@ -5841,7 +5839,7 @@ loc_8700E8:    ; CODE XREF: standardstringentry+33C4j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 569h
-; 1322:     if ( sub_595E10(&v10) )
+; 1322:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870102
@@ -5854,7 +5852,7 @@ loc_870102:    ; CODE XREF: standardstringentry+33DEj
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 56Ah
-; 1325:     if ( sub_595E10(&v10) )
+; 1325:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87011C
@@ -5867,7 +5865,7 @@ loc_87011C:    ; CODE XREF: standardstringentry+33F8j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 56Bh
-; 1328:     if ( sub_595E10(&v10) )
+; 1328:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870136
@@ -5880,7 +5878,7 @@ loc_870136:    ; CODE XREF: standardstringentry+3412j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 56Ch
-; 1331:     if ( sub_595E10(&v10) )
+; 1331:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870150
@@ -5893,7 +5891,7 @@ loc_870150:    ; CODE XREF: standardstringentry+342Cj
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 56Dh
-; 1334:     if ( sub_595E10(&v10) )
+; 1334:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87016A
@@ -5906,7 +5904,7 @@ loc_87016A:    ; CODE XREF: standardstringentry+3446j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 56Eh
-; 1337:     if ( sub_595E10(&v10) )
+; 1337:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870184
@@ -5919,7 +5917,7 @@ loc_870184:    ; CODE XREF: standardstringentry+3460j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 56Fh
-; 1340:     if ( sub_595E10(&v10) )
+; 1340:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87019E
@@ -5932,7 +5930,7 @@ loc_87019E:    ; CODE XREF: standardstringentry+347Aj
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 570h
-; 1343:     if ( sub_595E10(&v10) )
+; 1343:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8701B8
@@ -5945,7 +5943,7 @@ loc_8701B8:    ; CODE XREF: standardstringentry+3494j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 571h
-; 1346:     if ( sub_595E10(&v10) )
+; 1346:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8701D2
@@ -5958,7 +5956,7 @@ loc_8701D2:    ; CODE XREF: standardstringentry+34AEj
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 572h
-; 1349:     if ( sub_595E10(&v10) )
+; 1349:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8701EC
@@ -5971,7 +5969,7 @@ loc_8701EC:    ; CODE XREF: standardstringentry+34C8j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 573h
-; 1352:     if ( sub_595E10(&v10) )
+; 1352:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870206
@@ -5984,7 +5982,7 @@ loc_870206:    ; CODE XREF: standardstringentry+34E2j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 574h
-; 1355:     if ( sub_595E10(&v10) )
+; 1355:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870220
@@ -5997,7 +5995,7 @@ loc_870220:    ; CODE XREF: standardstringentry+34FCj
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 575h
-; 1358:     if ( sub_595E10(&v10) )
+; 1358:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87023A
@@ -6010,7 +6008,7 @@ loc_87023A:    ; CODE XREF: standardstringentry+3516j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 576h
-; 1361:     if ( sub_595E10(&v10) )
+; 1361:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870254
@@ -6023,7 +6021,7 @@ loc_870254:    ; CODE XREF: standardstringentry+3530j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 577h
-; 1364:     if ( sub_595E10(&v10) )
+; 1364:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87026E
@@ -6036,7 +6034,7 @@ loc_87026E:    ; CODE XREF: standardstringentry+354Aj
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 578h
-; 1367:     if ( sub_595E10(&v10) )
+; 1367:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870288
@@ -6049,7 +6047,7 @@ loc_870288:    ; CODE XREF: standardstringentry+3564j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 579h
-; 1370:     if ( sub_595E10(&v10) )
+; 1370:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8702A2
@@ -6062,7 +6060,7 @@ loc_8702A2:    ; CODE XREF: standardstringentry+357Ej
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 57Ah
-; 1373:     if ( sub_595E10(&v10) )
+; 1373:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8702BC
@@ -6075,7 +6073,7 @@ loc_8702BC:    ; CODE XREF: standardstringentry+3598j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 57Bh
-; 1376:     if ( sub_595E10(&v10) )
+; 1376:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8702D6
@@ -6088,7 +6086,7 @@ loc_8702D6:    ; CODE XREF: standardstringentry+35B2j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 57Ch
-; 1379:     if ( sub_595E10(&v10) )
+; 1379:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8702F0
@@ -6101,7 +6099,7 @@ loc_8702F0:    ; CODE XREF: standardstringentry+35CCj
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 57Dh
-; 1382:     if ( sub_595E10(&v10) )
+; 1382:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87030A
@@ -6114,7 +6112,7 @@ loc_87030A:    ; CODE XREF: standardstringentry+35E6j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 57Eh
-; 1385:     if ( sub_595E10(&v10) )
+; 1385:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870324
@@ -6127,7 +6125,7 @@ loc_870324:    ; CODE XREF: standardstringentry+3600j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 57Fh
-; 1388:     if ( sub_595E10(&v10) )
+; 1388:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87033E
@@ -6140,7 +6138,7 @@ loc_87033E:    ; CODE XREF: standardstringentry+361Aj
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 580h
-; 1391:     if ( sub_595E10(&v10) )
+; 1391:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870358
@@ -6153,7 +6151,7 @@ loc_870358:    ; CODE XREF: standardstringentry+3634j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 581h
-; 1394:     if ( sub_595E10(&v10) )
+; 1394:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870372
@@ -6166,7 +6164,7 @@ loc_870372:    ; CODE XREF: standardstringentry+364Ej
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 582h
-; 1397:     if ( sub_595E10(&v10) )
+; 1397:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87038C
@@ -6179,7 +6177,7 @@ loc_87038C:    ; CODE XREF: standardstringentry+3668j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 583h
-; 1400:     if ( sub_595E10(&v10) )
+; 1400:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8703A6
@@ -6192,7 +6190,7 @@ loc_8703A6:    ; CODE XREF: standardstringentry+3682j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 584h
-; 1403:     if ( sub_595E10(&v10) )
+; 1403:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8703C0
@@ -6205,7 +6203,7 @@ loc_8703C0:    ; CODE XREF: standardstringentry+369Cj
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 585h
-; 1406:     if ( sub_595E10(&v10) )
+; 1406:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8703DA
@@ -6218,7 +6216,7 @@ loc_8703DA:    ; CODE XREF: standardstringentry+36B6j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 586h
-; 1409:     if ( sub_595E10(&v10) )
+; 1409:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8703F4
@@ -6231,7 +6229,7 @@ loc_8703F4:    ; CODE XREF: standardstringentry+36D0j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 587h
-; 1412:     if ( sub_595E10(&v10) )
+; 1412:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87040E
@@ -6244,7 +6242,7 @@ loc_87040E:    ; CODE XREF: standardstringentry+36EAj
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 588h
-; 1415:     if ( sub_595E10(&v10) )
+; 1415:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870428
@@ -6257,7 +6255,7 @@ loc_870428:    ; CODE XREF: standardstringentry+3704j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 589h
-; 1418:     if ( sub_595E10(&v10) )
+; 1418:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870442
@@ -6270,7 +6268,7 @@ loc_870442:    ; CODE XREF: standardstringentry+371Ej
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 58Ah
-; 1421:     if ( sub_595E10(&v10) )
+; 1421:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87045C
@@ -6283,7 +6281,7 @@ loc_87045C:    ; CODE XREF: standardstringentry+3738j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 58Bh
-; 1424:     if ( sub_595E10(&v10) )
+; 1424:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870476
@@ -6296,7 +6294,7 @@ loc_870476:    ; CODE XREF: standardstringentry+3752j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 58Ch
-; 1427:     if ( sub_595E10(&v10) )
+; 1427:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870490
@@ -6309,7 +6307,7 @@ loc_870490:    ; CODE XREF: standardstringentry+376Cj
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 58Dh
-; 1430:     if ( sub_595E10(&v10) )
+; 1430:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8704AA
@@ -6322,7 +6320,7 @@ loc_8704AA:    ; CODE XREF: standardstringentry+3786j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 58Eh
-; 1433:     if ( sub_595E10(&v10) )
+; 1433:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8704C4
@@ -6335,7 +6333,7 @@ loc_8704C4:    ; CODE XREF: standardstringentry+37A0j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 58Fh
-; 1436:     if ( sub_595E10(&v10) )
+; 1436:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8704DE
@@ -6348,7 +6346,7 @@ loc_8704DE:    ; CODE XREF: standardstringentry+37BAj
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 590h
-; 1439:     if ( sub_595E10(&v10) )
+; 1439:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8704F8
@@ -6361,7 +6359,7 @@ loc_8704F8:    ; CODE XREF: standardstringentry+37D4j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 591h
-; 1442:     if ( sub_595E10(&v10) )
+; 1442:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870512
@@ -6374,7 +6372,7 @@ loc_870512:    ; CODE XREF: standardstringentry+37EEj
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 592h
-; 1445:     if ( sub_595E10(&v10) )
+; 1445:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87052C
@@ -6387,7 +6385,7 @@ loc_87052C:    ; CODE XREF: standardstringentry+3808j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 593h
-; 1448:     if ( sub_595E10(&v10) )
+; 1448:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870546
@@ -6400,7 +6398,7 @@ loc_870546:    ; CODE XREF: standardstringentry+3822j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 594h
-; 1451:     if ( sub_595E10(&v10) )
+; 1451:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870560
@@ -6413,7 +6411,7 @@ loc_870560:    ; CODE XREF: standardstringentry+383Cj
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 595h
-; 1454:     if ( sub_595E10(&v10) )
+; 1454:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87057A
@@ -6426,7 +6424,7 @@ loc_87057A:    ; CODE XREF: standardstringentry+3856j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 596h
-; 1457:     if ( sub_595E10(&v10) )
+; 1457:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870594
@@ -6439,7 +6437,7 @@ loc_870594:    ; CODE XREF: standardstringentry+3870j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 597h
-; 1460:     if ( sub_595E10(&v10) )
+; 1460:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8705AE
@@ -6452,7 +6450,7 @@ loc_8705AE:    ; CODE XREF: standardstringentry+388Aj
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 598h
-; 1463:     if ( sub_595E10(&v10) )
+; 1463:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8705C8
@@ -6465,7 +6463,7 @@ loc_8705C8:    ; CODE XREF: standardstringentry+38A4j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 599h
-; 1466:     if ( sub_595E10(&v10) )
+; 1466:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8705E2
@@ -6478,7 +6476,7 @@ loc_8705E2:    ; CODE XREF: standardstringentry+38BEj
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 59Ah
-; 1469:     if ( sub_595E10(&v10) )
+; 1469:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8705FC
@@ -6491,7 +6489,7 @@ loc_8705FC:    ; CODE XREF: standardstringentry+38D8j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 59Bh
-; 1472:     if ( sub_595E10(&v10) )
+; 1472:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870616
@@ -6504,7 +6502,7 @@ loc_870616:    ; CODE XREF: standardstringentry+38F2j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 59Ch
-; 1475:     if ( sub_595E10(&v10) )
+; 1475:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870630
@@ -6517,7 +6515,7 @@ loc_870630:    ; CODE XREF: standardstringentry+390Cj
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 59Dh
-; 1478:     if ( sub_595E10(&v10) )
+; 1478:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87064A
@@ -6530,7 +6528,7 @@ loc_87064A:    ; CODE XREF: standardstringentry+3926j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 59Eh
-; 1481:     if ( sub_595E10(&v10) )
+; 1481:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870664
@@ -6543,7 +6541,7 @@ loc_870664:    ; CODE XREF: standardstringentry+3940j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 59Fh
-; 1484:     if ( sub_595E10(&v10) )
+; 1484:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87067E
@@ -6556,7 +6554,7 @@ loc_87067E:    ; CODE XREF: standardstringentry+395Aj
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5A0h
-; 1487:     if ( sub_595E10(&v10) )
+; 1487:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870698
@@ -6569,7 +6567,7 @@ loc_870698:    ; CODE XREF: standardstringentry+3974j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 5A1h
-; 1490:     if ( sub_595E10(&v10) )
+; 1490:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8706B2
@@ -6582,7 +6580,7 @@ loc_8706B2:    ; CODE XREF: standardstringentry+398Ej
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5A2h
-; 1493:     if ( sub_595E10(&v10) )
+; 1493:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8706CC
@@ -6595,7 +6593,7 @@ loc_8706CC:    ; CODE XREF: standardstringentry+39A8j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5A3h
-; 1496:     if ( sub_595E10(&v10) )
+; 1496:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8706E6
@@ -6608,7 +6606,7 @@ loc_8706E6:    ; CODE XREF: standardstringentry+39C2j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 5A4h
-; 1499:     if ( sub_595E10(&v10) )
+; 1499:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870700
@@ -6621,7 +6619,7 @@ loc_870700:    ; CODE XREF: standardstringentry+39DCj
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5A5h
-; 1502:     if ( sub_595E10(&v10) )
+; 1502:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87071A
@@ -6634,7 +6632,7 @@ loc_87071A:    ; CODE XREF: standardstringentry+39F6j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5A6h
-; 1505:     if ( sub_595E10(&v10) )
+; 1505:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870734
@@ -6647,7 +6645,7 @@ loc_870734:    ; CODE XREF: standardstringentry+3A10j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 5A7h
-; 1508:     if ( sub_595E10(&v10) )
+; 1508:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87074E
@@ -6660,7 +6658,7 @@ loc_87074E:    ; CODE XREF: standardstringentry+3A2Aj
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5A8h
-; 1511:     if ( sub_595E10(&v10) )
+; 1511:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870768
@@ -6673,7 +6671,7 @@ loc_870768:    ; CODE XREF: standardstringentry+3A44j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5A9h
-; 1514:     if ( sub_595E10(&v10) )
+; 1514:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870782
@@ -6686,7 +6684,7 @@ loc_870782:    ; CODE XREF: standardstringentry+3A5Ej
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 5AAh
-; 1517:     if ( sub_595E10(&v10) )
+; 1517:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87079C
@@ -6699,7 +6697,7 @@ loc_87079C:    ; CODE XREF: standardstringentry+3A78j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5ABh
-; 1520:     if ( sub_595E10(&v10) )
+; 1520:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8707B6
@@ -6712,7 +6710,7 @@ loc_8707B6:    ; CODE XREF: standardstringentry+3A92j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5ACh
-; 1523:     if ( sub_595E10(&v10) )
+; 1523:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8707D0
@@ -6725,7 +6723,7 @@ loc_8707D0:    ; CODE XREF: standardstringentry+3AACj
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 5ADh
-; 1526:     if ( sub_595E10(&v10) )
+; 1526:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8707EA
@@ -6738,7 +6736,7 @@ loc_8707EA:    ; CODE XREF: standardstringentry+3AC6j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5AEh
-; 1529:     if ( sub_595E10(&v10) )
+; 1529:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870804
@@ -6751,7 +6749,7 @@ loc_870804:    ; CODE XREF: standardstringentry+3AE0j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5AFh
-; 1532:     if ( sub_595E10(&v10) )
+; 1532:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87081E
@@ -6764,7 +6762,7 @@ loc_87081E:    ; CODE XREF: standardstringentry+3AFAj
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 5B0h
-; 1535:     if ( sub_595E10(&v10) )
+; 1535:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870838
@@ -6777,7 +6775,7 @@ loc_870838:    ; CODE XREF: standardstringentry+3B14j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5B1h
-; 1538:     if ( sub_595E10(&v10) )
+; 1538:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870852
@@ -6790,7 +6788,7 @@ loc_870852:    ; CODE XREF: standardstringentry+3B2Ej
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5B2h
-; 1541:     if ( sub_595E10(&v10) )
+; 1541:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87086C
@@ -6803,7 +6801,7 @@ loc_87086C:    ; CODE XREF: standardstringentry+3B48j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 5B3h
-; 1544:     if ( sub_595E10(&v10) )
+; 1544:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870886
@@ -6816,7 +6814,7 @@ loc_870886:    ; CODE XREF: standardstringentry+3B62j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5B4h
-; 1547:     if ( sub_595E10(&v10) )
+; 1547:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8708A0
@@ -6829,7 +6827,7 @@ loc_8708A0:    ; CODE XREF: standardstringentry+3B7Cj
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5B5h
-; 1550:     if ( sub_595E10(&v10) )
+; 1550:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8708BA
@@ -6842,7 +6840,7 @@ loc_8708BA:    ; CODE XREF: standardstringentry+3B96j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 5B6h
-; 1553:     if ( sub_595E10(&v10) )
+; 1553:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8708D4
@@ -6855,7 +6853,7 @@ loc_8708D4:    ; CODE XREF: standardstringentry+3BB0j
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5B7h
-; 1556:     if ( sub_595E10(&v10) )
+; 1556:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_8708EE
@@ -6868,7 +6866,7 @@ loc_8708EE:    ; CODE XREF: standardstringentry+3BCAj
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5B8h
-; 1559:     if ( sub_595E10(&v10) )
+; 1559:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870908
@@ -6881,7 +6879,7 @@ loc_870908:    ; CODE XREF: standardstringentry+3BE4j
     push eax
     mov ecx, esi
     mov dword [esp+24h+var_C], 5B9h
-; 1562:     if ( sub_595E10(&v10) )
+; 1562:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870922
@@ -6894,7 +6892,7 @@ loc_870922:    ; CODE XREF: standardstringentry+3BFEj
     push ecx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5BAh
-; 1565:     if ( sub_595E10(&v10) )
+; 1565:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_87093C
@@ -6907,7 +6905,7 @@ loc_87093C:    ; CODE XREF: standardstringentry+3C18j
     push edx
     mov ecx, esi
     mov dword [esp+24h+var_C], 5BBh
-; 1568:     if ( sub_595E10(&v10) )
+; 1568:     if ( count(&v10) )
     call count
     test eax, eax
     jz short loc_870956
