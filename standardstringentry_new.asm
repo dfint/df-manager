@@ -1,5 +1,6 @@
 include 'macro\proc32.inc'
 include 'macro\struct.inc'
+include 'macro\if.inc'
 
 _Eqrange = 6613D0h
 _Distance2 = 596900h
@@ -56,142 +57,137 @@ endl
     mov ebx, ecx ; events
     
     test [flag], STRINGENTRY_LETTERS
-    jz .check_space
+    .if ~ZERO?
+        mov [count_arg], INTERFACEKEY_STRING_A168 ; '¨'
+        lea eax, [count_arg]
+        call_count ebx, eax
+        .if eax
+            mov [entry], '¨'
+            jmp .do_things
+        .endif
+        
+        mov [count_arg], INTERFACEKEY_STRING_A184 ; '¸'
+        lea eax, [count_arg]
+        call_count ebx, eax
+        .if eax
+            mov [entry], '¸'
+            jmp .do_things
+        .endif
+        
+        ; Check for cyrillic characters
+        mov edi, 'À' ; cyrillic A
+        mov esi, INTERFACEKEY_STRING_A192
+        .while 1
+            mov [count_arg], esi
+            lea eax, [count_arg]
+            call_count ebx, eax
+            .if eax
+                mov [entry], edi
+                jmp .do_things
+            .endif
+            cmp esi, INTERFACEKEY_STRING_A255
+            je @f
+            inc esi
+            inc edi
+        .endw
+        @@:
+        
+        ; Check for latin lowercase characters
+        mov edi, 'a' ; latin a
+        mov esi, INTERFACEKEY_STRING_A097
+        .while 1
+            mov [count_arg], esi
+            lea eax, [count_arg]
+            call_count ebx, eax
+            .if eax
+                mov [entry], edi
+                jmp .do_things
+            .endif
+            cmp esi, INTERFACEKEY_STRING_A122
+            je @f
+            inc esi
+            inc edi
+        .endw
+        @@:
+        
+        ; Check for latin uppercase characters
+        mov edi, 'A' ; latin A
+        mov esi, INTERFACEKEY_STRING_A065
+        .while 1
+            mov [count_arg], esi
+            lea eax, [count_arg]
+            call_count ebx, eax
+            .if eax
+                mov [entry], edi
+                jmp .do_things
+            .endif
+            cmp esi, INTERFACEKEY_STRING_A090
+            je @f
+            inc esi
+            inc edi
+        .endw
+        @@:
+    .endif
     
-    mov [count_arg], INTERFACEKEY_STRING_A168 ; '¨'
-    lea eax, [count_arg]
-    call_count ebx, eax
-    test eax, eax
-    jz @f
-    mov [entry], '¨'
-    jmp .do_things
-@@:
-    mov [count_arg], INTERFACEKEY_STRING_A184 ; '¸'
-    lea eax, [count_arg]
-    call_count ebx, eax
-    test eax, eax
-    jz @f
-    mov [entry], '¸'
-    jmp .do_things
-@@:
-
-    ; Check for cyrillic characters
-    mov edi, 'À' ; cyrillic A
-    mov esi, INTERFACEKEY_STRING_A192
-.cyr_loop:
-    mov [count_arg], esi
-    lea eax, [count_arg]
-    call_count ebx, eax
-    test eax, eax
-    jz @f
-    mov [entry], edi
-    jmp .do_things
-@@:
-    cmp esi, INTERFACEKEY_STRING_A255
-    je @f
-    inc esi
-    inc edi
-    jmp .cyr_loop
-@@:
-    ; Check for latin lowercase characters
-    mov edi, 'a' ; latin a
-    mov esi, INTERFACEKEY_STRING_A097
-.lat_lower_loop:
-    mov [count_arg], esi
-    lea eax, [count_arg]
-    call_count ebx, eax
-    test eax, eax
-    jz @f
-    mov [entry], edi
-    jmp .do_things
-@@:
-    cmp esi, INTERFACEKEY_STRING_A122
-    je @f
-    inc esi
-    inc edi
-    jmp .lat_lower_loop
-@@:
-    ; Check for latin uppercase characters
-    mov edi, 'A' ; latin A
-    mov esi, INTERFACEKEY_STRING_A065
-.lat_upper_loop:
-    mov [count_arg], esi
-    lea eax, [count_arg]
-    call_count ebx, eax
-    test eax, eax
-    jz @f
-    mov [entry], edi
-    jmp .do_things
-@@:
-    cmp esi, INTERFACEKEY_STRING_A090
-    je @f
-    inc esi
-    inc edi
-    jmp .lat_upper_loop
-@@:
-.check_space:
     test [flag], STRINGENTRY_SPACE
-    jz .check_zero
-    mov [count_arg], INTERFACEKEY_STRING_A032
-    lea eax, [count_arg]
-    call_count ebx, eax
-    test eax, eax
-    jz @f
-    mov [entry], ' '
-    jmp .do_things
-@@:
-.check_zero:
+    .if ~ZERO?
+        mov [count_arg], INTERFACEKEY_STRING_A032
+        lea eax, [count_arg]
+        call_count ebx, eax
+        .if eax
+            mov [entry], ' '
+            jmp .do_things
+        .endif
+    .endif
+    
     mov [count_arg], INTERFACEKEY_STRING_A000
     lea eax, [count_arg]
     call_count ebx, eax
-    test eax, eax
-    jz @f
-    mov [entry], 0
-    jmp .do_things
-@@:
-.check_numbers:
+    .if eax
+        mov [entry], 0
+        jmp .do_things
+    .endif
+    
     test [flag], STRINGENTRY_NUMBERS
-    jz .check_symbols
+    .if ~ZERO?
+        mov edi, '0'
+        mov esi, INTERFACEKEY_STRING_A048
+        .while 1
+            mov [count_arg], esi
+            lea eax, [count_arg]
+            call_count ebx, eax
+            .if eax
+                mov [entry], edi
+                jmp .do_things
+            .endif
+            cmp esi, INTERFACEKEY_STRING_A057
+            je @f
+            inc esi
+            inc edi
+        .endw
+        @@:
+    .endif
     
-    mov edi, '0'
-    mov esi, INTERFACEKEY_STRING_A048
-.numbers_loop:
-    mov [count_arg], esi
-    lea eax, [count_arg]
-    call_count ebx, eax
-    test eax, eax
-    jz @f
-    mov [entry], edi
-    jmp .do_things
-@@:
-    cmp esi, INTERFACEKEY_STRING_A057
-    je @f
-    inc esi
-    inc edi
-    jmp .numbers_loop
-@@:
-.check_symbols:
     test [flag], STRINGENTRY_SYMBOLS
-    jz .skip_symbols
+    .if ~ZERO?
+        mov edi, 0
+        mov esi, INTERFACEKEY_STRING_A000
+        .while 1
+            mov [count_arg], esi
+            lea eax, [count_arg]
+            call_count ebx, eax
+            .if eax
+                mov [entry], edi
+                jmp .do_things
+            .endif
+            cmp esi, INTERFACEKEY_STRING_A255
+            je @f
+            inc esi
+            inc edi
+        .endw
+        @@:
+    .endif
     
-    mov edi, 0
-    mov esi, INTERFACEKEY_STRING_A000
-.symbols_loop:
-    mov [count_arg], esi
-    lea eax, [count_arg]
-    call_count ebx, eax
-    test eax, eax
-    jz @f
-    mov [entry], edi
-    jmp .do_things
-@@:
-    cmp esi, INTERFACEKEY_STRING_A255
-    je @f
-    inc esi
-    inc edi
-    jmp .symbols_loop
-@@:
-.skip_symbols:
 .do_things:
     cmp [entry], -1
     je .return_0
@@ -201,67 +197,61 @@ endl
     
     ; if(entry=='\x0')
     ;     if(str.length()>0) str.resize(str.length()-1);
-    cmp [entry], 0
-    jne @f
-        cmp ecx, 0
-        jle @f
-        dec ecx
-        call resize
+    .if [entry]=0
+        .if ecx>0
+            dec ecx
+            call resize
+        .endif
         jmp .return_1
-@@:
+    .endif
+    
     ; if(cursor>=maxlen) cursor=maxlen-1;
-    cmp ecx, [maxlen]
-    jl @f
+    .if ecx>=[maxlen]
         mov ecx, [maxlen]
         dec ecx
-@@:
+    .endif
+    
     ; if(cursor<0) cursor=0;
-    cmp ecx, 0
-    jge @f
-    xor ecx, ecx
-@@:
+    .if ecx<0
+        xor ecx, ecx
+    .endif
+    
     ; if(str.length()<cursor+1) str.resize(cursor+1);
     mov edx, [eax+string.len]
     dec edx
-    cmp edx, ecx
-    jge @f
-    push ecx
-    push eax
-    inc ecx
-    call resize
-    pop eax
-    pop ecx
-@@:
+    .if edx < ecx
+        push ecx
+        push eax
+        inc ecx
+        call resize
+        pop eax
+        pop ecx
+    .endif
+    
     ; if(flag & STRINGENTRY_CAPS)
     test [flag], STRINGENTRY_CAPS
-    jz .nocaps
+    .if ~ZERO?
+        ; if(entry>='a'&&entry<='z') entry+='A'-'a';
+        .if [entry]>='a' & [entry]<='z'
+            add [entry], 'A'-'a'
+        .endif
+        
+        ; if(entry>='à'&&entry<='ÿ') entry+='A'-'a';
+        .if [entry]>='à' & [entry]<='ÿ'
+            add [entry], 'À'-'à' ; Cyrillic A and a
+        .endif
+        
+        ; if(entry=='¸') entry+='¨'-'¸';
+        .if [entry]='¸'
+            add [entry], '¨'-'¸' ; Cyrillic Yo and yo
+        .endif
+    .endif
     
-    ; if(entry>='a'&&entry<='z') entry+='A'-'a';
-    cmp [entry], 'a' ; latin a
-    jl @f
-    cmp [entry], 'z'
-    jg @f
-    add [entry], 'A'-'a'
-@@:
-    ; if(entry>='à'&&entry<='ÿ') entry+='A'-'a';
-    cmp [entry], 'à'
-    jl @f
-    cmp [entry], 'ÿ'
-    jg @f
-    add [entry], 'À'-'à' ; Cyrillic A and a
-@@:
-    ; if(entry=='¸') entry+='¨'-'¸';
-    cmp [entry], '¸' ; Cyrillic yo
-    jne @f
-    add [entry], '¨'-'¸' ; Cyrillic Yo and yo
-@@:
-.nocaps:
     ; str[cursor]=entry;
     mov edx, [eax+string.capa]
-    cmp edx, 10h
-    jle @f
-    mov eax, [eax+string.ptr]
-@@:
+    .if edx>=10h
+        mov eax, [eax+string.ptr]
+    .endif
     mov edx, [entry]
     mov [eax+ecx], dl
 .return_1:
