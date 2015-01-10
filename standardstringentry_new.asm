@@ -220,7 +220,7 @@ endl
             ; if(str.length()<cursor+1) str.resize(cursor+1);
             mov edx, [eax+string.len]
             dec edx
-            .if edx < ecx
+            .if signed edx < ecx
                 push ecx
                 push eax
                 inc ecx
