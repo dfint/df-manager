@@ -2,10 +2,10 @@ include 'macro\proc32.inc'
 include 'macro\struct.inc'
 include 'macro\if.inc'
 
-_Eqrange = 6613D0h
-_Distance2 = 596900h
-count = 595E10h
-resize = 43D200h
+format MS COFF
+
+extrn 'count' as count ; Original address: 595E10h
+extrn 'resize' as resize ; Original address: 43D200h
 
 STRINGENTRY_LETTERS = 1
 STRINGENTRY_SPACE   = 2
@@ -44,11 +44,11 @@ struct string
     pad dd ?
 ends
 
-use32
-org 86CD20h
-
 a = standardstringentry ; force compilation of the procedure
 
+section '.text' code
+
+; Original addres of the standardstringentry procedure: 86CD20h
 proc standardstringentry c uses esi edi ebx, \
     str:DWORD, maxlen:DWORD, flag:BYTE ; events:ECX
 locals
