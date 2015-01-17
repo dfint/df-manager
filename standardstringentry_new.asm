@@ -44,9 +44,9 @@ struct string
     pad dd ?
 ends
 
-a = standardstringentry ; force compilation of the procedure
-
 section '.text' code
+
+public standardstringentry
 
 ; Original addres of the standardstringentry procedure: 86CD20h
 proc standardstringentry c uses esi edi ebx, \
