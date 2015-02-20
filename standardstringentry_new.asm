@@ -2,10 +2,8 @@ include 'macro\proc32.inc'
 include 'macro\struct.inc'
 include 'macro\if.inc'
 
-_Eqrange = 6613D0h
-_Distance2 = 596900h
-count = 595E10h
-resize = 43D200h
+count = 5ABF10h
+resize = 43FA90h
 
 STRINGENTRY_LETTERS = 1
 STRINGENTRY_SPACE   = 2
@@ -13,7 +11,7 @@ STRINGENTRY_NUMBERS = 4
 STRINGENTRY_CAPS    = 8
 STRINGENTRY_SYMBOLS = 16
 
-INTERFACEKEY_STRING_A000 = 04BEh ; May vary from version to version
+INTERFACEKEY_STRING_A000 = 04BEh + 11 ; May vary from version to version
 INTERFACEKEY_STRING_A032 = INTERFACEKEY_STRING_A000 + 32
 INTERFACEKEY_STRING_A048 = INTERFACEKEY_STRING_A000 + 48
 INTERFACEKEY_STRING_A057 = INTERFACEKEY_STRING_A000 + 57
@@ -45,7 +43,7 @@ struct string
 ends
 
 use32
-org 86CD20h
+org 88F350h
 
 a = standardstringentry ; force compilation of the procedure
 
@@ -269,4 +267,3 @@ endl
 .ret:
     ret
 endp
-
